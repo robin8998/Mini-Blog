@@ -15,7 +15,7 @@ export default function Post() {
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
     useEffect(() => {
-        if (slug) {
+        if (slug) { 
             databaseService.getPost(slug).then((post) => {
                 if (post) setPost(post);
                 else navigate("/");

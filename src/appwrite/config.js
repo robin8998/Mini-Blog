@@ -128,7 +128,15 @@ export class DatabaseService {
       fileId
   )
   } 
+
+  logoPreview(fileId){
+    return this.storage.getFilePreview(
+      conf.appwriteLogoBucketId,
+      fileId
+    )
+   }
 }
+
 
 const databaseService = new DatabaseService();
 

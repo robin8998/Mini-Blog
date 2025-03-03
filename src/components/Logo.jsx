@@ -1,8 +1,18 @@
 import React from 'react'
+import databaseService from '../appwrite/config'
+import conf from '../conf/conf'
 
-function Logo({width="100px"}) {
+function Logo() {
+  const logoId = conf.appwriteLogoId
+  
   return (
-    <div><img src="./logoImage/blogLogo.png" alt="Logo" /></div>
+    <div className="flex items-center justify-center h-10 w-auto overflow-hidden">
+      <img 
+        src={databaseService.logoPreview(logoId)} 
+        alt="Logo" 
+        className="h-full w-auto object-contain rounded-full"
+      />
+    </div>
   )
 }
 

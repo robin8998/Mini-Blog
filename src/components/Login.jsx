@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import { login as authLogin } from '../store/authSlice'
 import {Button, Input, Logo} from "./index"
 import {useDispatch} from "react-redux"
-import authService from '../appwrite/Auth'
+import authService from '../appwrite/auth'
 import {useForm} from "react-hook-form"
 
 function Login() {
@@ -25,7 +25,7 @@ function Login() {
             setError(error.message)
         }
     }
-
+    console.log("this is login Error :: ",error)
   return (
     <div
     className='flex items-center justify-center w-full'

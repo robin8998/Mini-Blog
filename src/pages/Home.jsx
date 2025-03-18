@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, PostCard } from '../components';
 import databaseService from '../appwrite/config';
+import { Link } from 'react-router';
 
 function Home() {
   const [posts, setPosts] = useState([]);

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import databaseService from "../appwrite/config";
+import parse from "html-react-parser"
 
 function PostCard({ $id, title, featuredImage, author, content }) {
   // Truncate content for preview if available
   const previewContent = content ? content.substring(0, 100) + (content.length > 100 ? '...' : '') : '';
-
+  const parsedPreviewContent = parse(previewContent)
   return (
     <Link to={`/post/${$id}`} className="block h-full">
       <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -22,8 +23,8 @@ function PostCard({ $id, title, featuredImage, author, content }) {
         </div>
         <div className="p-5">
           <h2 className="text-xl font-bold text-gray-800 mb-2 line-clamp-2">{title}</h2>
-          {previewContent && (
-            <p className="text-gray-600 line-clamp-3 mb-3">{previewContent}</p>
+          {parsedPreviewContent && (
+            <div className="text-gray-600 line-clamp-3 mb-3">{parsedPreviewContent}</div>
           )}
           {author && (
             <div className="flex items-center mt-4">

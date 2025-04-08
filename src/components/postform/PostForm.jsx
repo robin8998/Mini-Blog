@@ -17,8 +17,9 @@ export default function PostForm({ post }) {
 
   const navigate = useNavigate();
   const userData = useSelector((state) => state.auth.userData);
-
+    
   const submit = async (data) => {
+    
     try {
       // If post is present - handle editing
       if (post) {
@@ -40,7 +41,8 @@ export default function PostForm({ post }) {
       // Handle new post creation
       else {
         const file = await databaseService.uploadFile(data.image[0]);
-
+        console.log("submission file",file)
+        console.log("userdata",userData)
         if (file) {
           const fileId = file.$id;
           data.featuredImage = fileId;

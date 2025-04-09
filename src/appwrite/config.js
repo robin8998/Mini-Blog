@@ -130,7 +130,7 @@ export class DatabaseService {
   } 
 
   logoPreview(fileId){
-    return this.storage.getFilePreview(
+    return this.storage.getFileView(
       conf.appwriteLogoBucketId,
       fileId
     )

@@ -22,7 +22,7 @@ function Footer() {
               </div>
               <div className="mt-auto">
                 <p className="text-sm text-gray-600">
-                  &copy; Copyright {currentYear}. All Rights Reserved by DevUI.
+                  &copy; Copyright {currentYear}. All Rights Reserved by DevRobin.
                 </p>
               </div>
             </div>

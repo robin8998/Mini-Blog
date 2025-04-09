@@ -7,8 +7,6 @@ function PostCard({ $id, title, featuredImage, author, content }) {
   // Truncate content for preview if available
   const previewContent = content ? content.substring(0, 100) + (content.length > 100 ? '...' : '') : '';
   const parsedPreviewContent = parse(previewContent)
-  console.log(featuredImage)
-  console.log(content)
   return (
     <Link to={`/post/${$id}`} className="block h-full">
       <div className="w-full h-full bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
